@@ -1,0 +1,15 @@
+python -m venv fastapi-env    
+
+.\fastapi-env\Scripts\Activate.ps1
+deactivate
+
+uv init board-api   
+uv add "fastapi[standard]"
+
+uv run fastapi dev ./app/main.py   
+
+winget install --id Casey.Just --exact
+# PowerShell
+set windows-shell := ["powershell.exe", "-NoProfile", "-NoLogo", "-Command"]
+
+uv add --dev ruff  
